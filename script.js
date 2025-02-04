@@ -30,7 +30,7 @@ function takeLoan(amount) {
   personalMoney += amount;  // Tambahkan uang pinjaman ke uang pribadi
   debt += amount;           // Tambahkan hutang
   updateDisplay();
-  showNotification(`Anda meminjam $${amount}! Hutang saat ini: $${debt}`, 'loan');
+  showNotification(`You borrow $${amount}! Current debt: $${debt}`, 'loan');
 }
 
 function getWinProbability() {
@@ -79,11 +79,11 @@ function spin() {
           if (bonus > 0) {
             personalMoney += bonus;
           }
-          showNotification(`JACKPOT! 🎉 Hutang berkurang dan uang bertambah $${bonus > 0 ? bonus : 0}!`, 'win');
+          showNotification(`JACKPOT! 🎉 Debt decreases and money increases $${bonus > 0 ? bonus : 0}!`, 'win');
         } else {
           // Jika tidak ada hutang, jackpot menambah uang pribadi seperti biasa.
           personalMoney += winAmount;
-          showNotification(`JACKPOT! 🎉 Menang $${winAmount}!`, 'win');
+          showNotification(`JACKPOT! 🎉 Won $${winAmount}!`, 'win');
         }
         showWinAnimation();
         // Tampilkan simbol yang sama untuk ketiga slot
