@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Luxury Slot Machine</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="game-container">
+    <div class="header">
+      <div class="money-display">
+        <div class="balance-card">
+          <h3>Uang Pribadi</h3>
+          <div class="amount">$<span id="personalMoney">500</span></div>
+        </div>
+        <div class="debt-card">
+          <h3>Hutang</h3>
+          <div class="amount">$<span id="debt">0</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="slot-machine">
+      <div class="slots">
+        <div class="slot" id="slot1">🎰</div>
+        <div class="slot" id="slot2">🎰</div>
+        <div class="slot" id="slot3">🎰</div>
+      </div>
+      <div class="controls">
+        <button class="spin-button" onclick="spin()" id="spinButton">
+          SPIN ($100)
+          <div class="glow"></div>
+        </button>
+      </div>
+    </div>
+
+    <div class="loan-section">
+      <h3>Pinjam Uang Instant</h3>
+      <div class="loan-buttons">
+        <button class="loan-option" onclick="takeLoan(100)">$100</button>
+        <button class="loan-option" onclick="takeLoan(500)">$500</button>
+        <button class="loan-option" onclick="takeLoan(1000)">$1K</button>
+        <button class="loan-option" onclick="takeLoan(20000)">$20K</button>
+      </div>
+    </div>
+
+    <!-- Elemen notifikasi kustom -->
+    <div id="notification" class="notification"></div>
+
+    <div class="overlay" id="gameOverOverlay">
+      <div class="game-over-modal">
+        <h2>Selamat, kamu telah menjadi miskin dan terlilit hutang! 😭</h2>
+        <button onclick="resetGame()">Mulai Lagi</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

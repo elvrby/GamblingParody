@@ -1,0 +1,268 @@
+/* Reset dan style dasar */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .game-container {
+    width: 800px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 20px;
+    box-shadow: 0 0 50px rgba(255, 215, 0, 0.2);
+    position: relative;
+  }
+  
+  .header {
+    margin-bottom: 30px;
+  }
+  
+  .money-display {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .balance-card,
+  .debt-card {
+    padding: 20px;
+    border-radius: 15px;
+    min-width: 180px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+  }
+  
+  .balance-card {
+    border: 2px solid #00ff88;
+  }
+  
+  .debt-card {
+    border: 2px solid #ff0066;
+  }
+  
+  .amount {
+    font-size: 32px;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  
+  .slot-machine {
+    position: relative;
+    padding: 30px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    margin: 20px 0;
+  }
+  
+  .slots {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+  }
+  
+  .slot {
+    width: 120px;
+    height: 120px;
+    background: linear-gradient(45deg, #2b2b2b 0%, #1a1a1a 100%);
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    border: 2px solid gold;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+  }
+  
+  .controls {
+    text-align: center;
+  }
+  
+  .spin-button {
+    position: relative;
+    padding: 15px 40px;
+    font-size: 20px;
+    background: linear-gradient(45deg, #ffd700 0%, #ffaa00 100%);
+    border: none;
+    border-radius: 50px;
+    color: #1a1a1a;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s;
+    overflow: hidden;
+  }
+  
+  .spin-button:hover {
+    transform: scale(1.05);
+  }
+  
+  .glow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.4) 0%, transparent 70%);
+    opacity: 0;
+    animation: glow 2s infinite;
+  }
+  
+  @keyframes glow {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
+  }
+  
+  .loan-section {
+    margin-top: 30px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    text-align: center;
+  }
+  
+  .loan-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 15px;
+  }
+  
+  .loan-option {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(45deg, #00ff88 0%, #00ccff 100%);
+    color: #1a1a1a;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+  
+  .loan-option:hover {
+    transform: translateY(-2px);
+  }
+  
+  button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
+  .overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .game-over-modal {
+    background: #222;
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 0 30px rgba(255, 0, 0, 0.5);
+  }
+  
+  .game-over-modal h2 {
+    color: #ff4444;
+    margin-bottom: 20px;
+  }
+  
+  .game-over-modal button {
+    padding: 10px 20px;
+    background: #ff4444;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .game-over-modal button:hover {
+    background: #ff0000;
+  }
+  
+  /* Notifikasi kustom */
+  .notification {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #333;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 8px;
+    display: none;
+    font-size: 18px;
+    z-index: 1000;
+    opacity: 0.95;
+  }
+  
+  .notification.win {
+    background: #28a745;
+  }
+  
+  .notification.loan {
+    background: #17a2b8;
+  }
+  
+  .notification.info {
+    background: #007bff;
+  }
+  
+  /* Responsive Styles */
+  @media only screen and (max-width: 768px) {
+    .game-container {
+      width: 90%;
+      padding: 20px;
+    }
+
+    .debt-card {
+        padding: 10px;
+        border-radius: 15px;
+        min-width: 0px;
+        text-align: center;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+      }
+  
+    /* Mengecilkan tampilan uang pribadi dan hutang */
+    .amount {
+      font-size: 20px; /* dikurangi dari 24px atau nilai sebelumnya */
+    }
+  
+    .slot {
+      width: 80px;
+      height: 80px;
+      font-size: 36px;
+    }
+  
+    .spin-button {
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+  
+    .loan-section {
+      padding: 10px;
+    }
+  
+    .loan-option {
+      padding: 8px 16px;
+      font-size: 14px;
+    }
+  }
+  
